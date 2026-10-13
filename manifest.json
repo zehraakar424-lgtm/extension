@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Xendra Wallet",
+  "version": "1.0.0",
+  "description": "Multi-chain Xendra wallet — same UI as the web app.",
+  "action": {
+    "default_title": "Open Xendra Wallet",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["http://127.0.0.1:8790/*", "http://localhost:8790/*", "https://*/*"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' https: http://127.0.0.1:8790 http://localhost:8790"
+  }
+}
